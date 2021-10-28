@@ -6,13 +6,26 @@
 
 body {
     background-color: rgb(285, 255, 239);
+    font-family: 'Press Start 2P', cursive;
+}
+
+button {
+    font-family: 'Press Start 2P', cursive;
+    padding: 25px;
+    background: aquamarine;
+    border: 6px solid #000;
+    border-radius: 999999px;
+}
+
+.count {
+    margin-bottom: 12px;
 }
 
 .main-game {
     height: 100vh;
     width: 100vw;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -21,11 +34,18 @@ body {
     grid-template-areas:'green-area red-area'
     'yellow-area blue-area';
     grid-gap: 10px;
-    border: 1px solid #FFF;
+    border: 1px solid #fff;
     background-color: #FFF;
     border-radius: 100%;
     width: 600px;
     height: 600px;
+}
+
+.genius div{
+    border: 6px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .blue-area {
@@ -58,4 +78,5 @@ body {
 
 .selected {
     opacity: 0.5;
+    color: #fff;
 }

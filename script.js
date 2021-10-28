@@ -36,7 +36,7 @@ let lightColor = (element, number) => {
     }, number - 250);
     setTimeout(() => {
         element.classList.remove('selected')
-    })
+    }, number + 250)
 }
 
 // Checagem do que foi clicado com a ordem de cores gerada
@@ -82,6 +82,7 @@ let createColorElement = (color) => {
 // função próximo jogo
 let nextLevel = () => {
     score++;
+    template(score -1)
     shuffleOrder()
 }
 
@@ -90,7 +91,6 @@ let gameOver = () => {
     alert(`Pontuação: ${score}!\nVocê perdeu!\nClique em Ok para reiniciar o jogo.`);
     order = []
     clickedOrder = []
-
     playGame()
 }
 
@@ -106,4 +106,28 @@ red.onclick = () =>  click(1)
 yellow.onclick = () =>  click(2)
 blue.onclick = () =>  click(3)
 
-playGame()
+const start = document.querySelector('.start')
+start.addEventListener('click', playGame)
+
+
+const template = (value) => {
+    const html = `<p class="count">${value}</p>
+                <p>Score</p>`
+    removeElement()
+    scoreFunction(html)
+}
+
+const scoreFunction = (html) => {
+    const elementP = document.createElement('p')
+    elementP.innerHTML = `${html}`
+    const divScore = document.querySelector('.score')
+    divScore.appendChild(elementP)
+}
+
+const removeElement = () => {
+    const divScore = document.querySelector('.score')
+    while (divScore.firstChild) {
+        divScore.removeChild(divScore.firstChild)
+    }
+}
+
