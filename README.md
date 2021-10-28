@@ -1,6 +1,8 @@
 # Game-Genius
 Jogo de memória criado para o desafio da Digital Innovation One
 
+Veja o Game clicando <a href="https://willamessilv.github.io/Game-Genius/">aqui</a>.
+
 ### Tecnologias usadas:
  - HTML
  - CSS
